@@ -1,13 +1,13 @@
 # DNS Resolver CLI
 
-A Command Line Interface (CLI) tool written in Go that functions as an Iterative DNS Resolver, allowing users to override default DNS answers using PostgreSQL. This project leverages the Cobra library to provide various commands for managing custom DNS records and starting the DNS server.
+A Command Line Interface (CLI) tool written in Go that functions as an Iterative DNS Resolver, allowing users to override default DNS answers using PostgreSQL. This project leverages the Cobra library to provide various commands for managing custom DNS records and starting the DNS server. I have created this CLI so that in future if I need to override my DNS, I have a solution. I am proud of the Custom DNS Packet Handelling in UDP connection without any pre-build libraries. Performing Iterative Lookup was a fun task too and made me realise the the beautiful procress of Name Address Translation. Supports All types or Resource Record Types, Classes. Does not Support the TTL implementation nor it is needed for our Custom DNS Database in postgres.
 
 ## Features
 
+- **Custom DNS Parsing**: It does not uses any dns packages available in go and uses the basic net/http package to create UDP DNS Response and read from an UDP connection.
 - **Iterative DNS Lookup**: Automatically performs iterative DNS resolution by querying root servers, TLD servers, and authoritative servers recursively. Also Caches the Itterative Resolution Rsponse.
 - **Custom DNS Records**: Override DNS answers with custom entries stored in a PostgreSQL database.
 - **Record Management**: Add, list, and remove DNS records from the database via CLI commands.
-- **DNS Server**: Start a DNS server that listens on `127.0.0.1`.
 - **Modular Architecture**: Separation of concerns with distinct modules for CLI, database interactions, and resolver logic.
 
 ## Installation
@@ -78,7 +78,7 @@ By default, the server listens on `127.0.0.1:53`.
 <img src="https://raw.githubusercontent.com/SohamJoshi25/dns-server/refs/heads/main/docs/images/lookup.png" alt="DNS Lookup" width="500">
 <br>
 <br>
-# You can see my server looksup the AAAA record from internet but because A and TXT record was preset in Database, it fetched from there
+You can see my server looksup the AAAA record from internet but because A and TXT record was preset in Database, it fetched from there
 
 ## Configuration
 
