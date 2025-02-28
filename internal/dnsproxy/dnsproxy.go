@@ -8,7 +8,7 @@ import (
 	"strings"
 
 	"github.com/hashicorp/golang-lru/v2/expirable"
-	dnslookup "github.com/sohamjoshi25/go-dns-server/dnslookup"
+	dnslookup "github.com/sohamjoshi25/go-dns-server/internal/dnslookup"
 )
 
 func HandleDNSRequest(conn *net.UDPConn, cache *expirable.LRU[dnslookup.DNSQuestion, []dnslookup.DNSAnswer]) {
