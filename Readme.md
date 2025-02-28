@@ -4,7 +4,7 @@ A Command Line Interface (CLI) tool written in Go that functions as an Iterative
 
 ## Features
 
-- **Iterative DNS Lookup**: Automatically performs iterative DNS resolution by querying root servers, TLD servers, and authoritative servers recursively.
+- **Iterative DNS Lookup**: Automatically performs iterative DNS resolution by querying root servers, TLD servers, and authoritative servers recursively. Also Caches the Itterative Resolution Rsponse.
 - **Custom DNS Records**: Override DNS answers with custom entries stored in a PostgreSQL database.
 - **Record Management**: Add, list, and remove DNS records from the database via CLI commands.
 - **DNS Server**: Start a DNS server that listens on `127.0.0.1`.
@@ -68,7 +68,12 @@ go build -o dns-server
 
 By default, the server listens on `127.0.0.1:53`.
 
-[alt text](https://github.com/SohamJoshi25/dns-server/blob/[branch]/image.jpg?raw=true)
+[Commands Usage](https://github.com/SohamJoshi25/dns-server/blob/main/docs/images/image.png?raw=true)
+
+[Database Schema and Records](https://github.com/SohamJoshi25/dns-server/blob/main/docs/images/db.png?raw=true)
+
+[DNS Lookup](https://github.com/SohamJoshi25/dns-server/blob/main/docs/images/lookup.png?raw=true)
+You can see my server looksup the AAAA record from internet but because A and TXT record was preset in Database, it fetched from there
 
 ## Configuration
 
