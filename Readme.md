@@ -68,9 +68,10 @@ go build -o dns-server
 
 By default, the server listens on `127.0.0.1:53`.
 
-[Commands Usage](https://raw.githubusercontent.com/SohamJoshi25/dns-server/refs/heads/main/docs/images/image.png)
+![Commands Usage](https://raw.githubusercontent.com/SohamJoshi25/dns-server/refs/heads/main/docs/images/image.png)
 
-[Database Schema and Records](https://raw.githubusercontent.com/SohamJoshi25/dns-server/refs/heads/main/docs/images/db.png)
+![Database Schema and Records](https://raw.githubusercontent.com/SohamJoshi25/dns-server/refs/heads/main/docs/images/db.png)
+![db](https://github.com/user-attachments/assets/fe009e66-04de-4577-b5d8-04bd81b520cd)
 
 [DNS Lookup](https://raw.githubusercontent.com/SohamJoshi25/dns-server/refs/heads/main/docs/images/lookup.png)
 
