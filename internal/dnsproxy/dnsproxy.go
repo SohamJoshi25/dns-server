@@ -46,21 +46,20 @@ func HandleDNSRequest(conn *net.UDPConn, cache *expirable.LRU[dnslookup.DNSQuest
 			for i, DNSanswer := range DNSanswers {
 				answers[i] = DNSanswer.RData
 			}
-			fmt.Println("Response from cache")
+			fmt.Println("Response from Cache", question.Name, question.Class)
 			response := buildDNSResponse(header, question, answers, false)
 			conn.WriteToUDP(response, addr)
 			return
 
 		} else {
 
-			fmt.Println("Domain NOT found in database : Performing iterativeLookup")
+			fmt.Println("Domain NOT found in database : Performing Iterative Lookup", question.Name, question.Class)
 
 			answer, err := dnslookup.IterativeLookup(*question, *header, cache, false)
 			if err != nil {
 				fmt.Println("Failed to LookUp", err.Error())
 				return
 			}
-			fmt.Printf("Response Bytes: %+v\n", answer)
 
 			conn.WriteToUDP(answer, addr)
 			return
