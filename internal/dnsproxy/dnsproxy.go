@@ -8,7 +8,8 @@ import (
 	"strings"
 
 	"github.com/hashicorp/golang-lru/v2/expirable"
-	dnslookup "github.com/sohamjoshi25/go-dns-server/internal/dnslookup"
+	dnsdb "github.com/sohamjoshi25/dns-server/internal/dnsdb"
+	dnslookup "github.com/sohamjoshi25/dns-server/internal/dnslookup"
 )
 
 func HandleDNSRequest(conn *net.UDPConn, cache *expirable.LRU[dnslookup.DNSQuestion, []dnslookup.DNSAnswer]) {
@@ -29,22 +30,10 @@ func HandleDNSRequest(conn *net.UDPConn, cache *expirable.LRU[dnslookup.DNSQuest
 		return
 	}
 
-	if question.Name == "example.com" {
+	answers, err := dnsdb.QueryDatabase(question.Name, question.Type)
 
-		var answers []string
-		if question.Type == 1 {
-			fmt.Println("Domain found")
-			answers = []string{"192.168.0.0", "192.168.0.1", "192.168.0.2"}
-		} else if question.Type == 28 {
-			fmt.Println("Domain found")
-			answers = []string{"2001:db8::1", "2001:db8::2", "2001:db8::3"}
-		} else if question.Type == 16 {
-			fmt.Println("Domain found")
-			answers = []string{"Hello", "This is A String"}
-		} else {
-			fmt.Println("Domain found but no matching type")
-		}
-
+	if err == nil {
+		fmt.Println("Domain found in Database", question.Name, question.Class)
 		response := buildDNSResponse(header, question, answers, true)
 		conn.WriteToUDP(response, addr)
 	} else {

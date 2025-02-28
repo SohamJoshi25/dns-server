@@ -23,3 +23,9 @@ type DNSAnswer struct {
 	RDLength uint16
 	RData    string
 }
+
+type Record struct {
+	Name   string
+	Type   uint16
+	Answer string
+}
