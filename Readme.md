@@ -67,14 +67,13 @@ go build -o dns-server
 ```
 
 By default, the server listens on `127.0.0.1:53`.
-
+&nbsp;
 ![Commands Usage](https://raw.githubusercontent.com/SohamJoshi25/dns-server/refs/heads/main/docs/images/image.png)
-
+&nbsp;
 ![Database Schema and Records](https://raw.githubusercontent.com/SohamJoshi25/dns-server/refs/heads/main/docs/images/db.png)
-![db](https://github.com/user-attachments/assets/fe009e66-04de-4577-b5d8-04bd81b520cd)
-
-[DNS Lookup](https://raw.githubusercontent.com/SohamJoshi25/dns-server/refs/heads/main/docs/images/lookup.png)
-
+&nbsp;
+![DNS Lookup](https://raw.githubusercontent.com/SohamJoshi25/dns-server/refs/heads/main/docs/images/lookup.png)
+&nbsp;
 # You can see my server looksup the AAAA record from internet but because A and TXT record was preset in Database, it fetched from there
 
 ## Configuration
