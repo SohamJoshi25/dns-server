@@ -1,6 +1,10 @@
 # DNS Resolver CLI
 
-A Command Line Interface (CLI) tool written in Go that functions as an Iterative DNS Resolver, allowing users to override default DNS answers using PostgreSQL. This project leverages the Cobra library to provide various commands for managing custom DNS records and starting the DNS server. I have created this CLI so that in future if I need to override my DNS, I have a solution. I am proud of the Custom DNS Packet Handelling in UDP connection without any pre-build libraries. Performing Iterative Lookup was a fun task too and made me realise the the beautiful procress of Name Address Translation. Supports All types or Resource Record Types, Classes. Does not Support the TTL implementation nor it is needed for our Custom DNS Database in postgres.
+I’ve developed a Command Line Interface (CLI) tool in Go that serves as an Iterative DNS Resolver, allowing users to override default DNS responses using PostgreSQL. This project utilizes the Cobra library to provide various commands for managing custom DNS records and running the DNS server.
+
+I built this CLI to have a personal solution for overriding DNS when needed. One of the aspects I’m most proud of is the custom DNS packet handling over UDP, implemented without relying on pre-built libraries. Implementing iterative lookups was an insightful experience, deepening my appreciation for the intricate process of Name Address Translation.
+
+The tool supports all Resource Record types and Classes but does not implement TTL, as it's unnecessary for our custom DNS database in PostgreSQL.
 
 ## Features
 
