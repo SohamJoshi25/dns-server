@@ -14,14 +14,8 @@ The tool supports all Resource Record types and Classes but does not implement T
 - **Record Management**: Add, list, and remove DNS records from the database via CLI commands.
 - **Modular Architecture**: Separation of concerns with distinct modules for CLI, database interactions, and resolver logic.
 
-## Installation
 
-### Prerequisites
-
-- Go (version 1.21 or higher)
-- Docker (for running PostgreSQL)
-
-### Setting Up PostgreSQL with Docker
+### Setting Up PostgreSQL with Docker as its required
 
 To utilize the custom DNS records feature, ensure you have a running PostgreSQL instance. You can set this up using Docker:
 
