@@ -31,18 +31,7 @@ docker run --name my-postgres-container   -e POSTGRES_USER=postgres   -e POSTGRE
 
 This command pulls the latest PostgreSQL image from Docker Hub and runs it in a container with the specified environment variables. [Learn more about using PostgreSQL with Docker](https://www.docker.com/blog/how-to-use-the-postgres-docker-official-image/).
 
-### Cloning the Repository
 
-```bash
-git clone https://github.com/SohamJoshi25/dns-server.git
-cd dns-server
-```
-
-### Building the Project
-
-```bash
-go build -o dns-server
-```
 
 ## Usage
 
