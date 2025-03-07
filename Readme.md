@@ -67,17 +67,6 @@ By default, the server listens on `127.0.0.1:53`.
 <br>
 You can see my server looksup the AAAA record from internet but because A and TXT record was preset in Database, it fetched from there
 
-## Configuration
-
-Database connection settings can be configured via environment variables:
-
-```bash
-export DB_HOST=localhost
-export DB_PORT=5432
-export DB_USER=postgres
-export DB_PASSWORD=mypassword
-export DB_NAME=postgres
-```
 
 ## Project Structure
 
